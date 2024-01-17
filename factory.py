@@ -12,7 +12,7 @@ mongo = PyMongo()  # Crea una instancia de PyMongo
 
 def create_app():
     app = Flask(__name__)
-    CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+    CORS(app, resources={r"/*": {"origins": "*"}})
     app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
     mongo.init_app(app)  # Inicializa la instancia de PyMongo con la app
